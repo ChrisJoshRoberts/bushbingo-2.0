@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import ProfileHeader from './components/ProfileHeader';
 import GamesCard from './components/GamesCard';
 import ParkCard from './components/ParkCard';
+import AnimalCard from './components/AnimalCard';
 
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <ProfileHeader /> 
       <GamesCard />
       <ParkCard />
+      <AnimalCard />
       <NavBar />
       <StatusBar style="auto" />
     </SafeAreaView>

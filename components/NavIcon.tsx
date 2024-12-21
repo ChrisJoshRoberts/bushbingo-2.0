@@ -12,8 +12,6 @@ const NavIcon = ({title , image} : NavIconProps) => {
       <Pressable onPress={onPressHandler}>
         <Image
           source={image}
-          width={20}
-          height={20}
           style={styles.icon}
         />
       </Pressable>
@@ -31,6 +29,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   navTitle: {
+    marginTop: 4,
     color: '#fff',
     fontWeight: 600
   },

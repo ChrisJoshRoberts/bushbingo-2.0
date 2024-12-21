@@ -1,13 +1,12 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native"
 
-
 const ParkCard = () => {
   return (
     <View style={styles.parkCardContainer}>
       <View style={styles.parkImage}></View>
       <View style={styles.parkDetails}>
         <View>
-          <Text>Park Name</Text>
+          <Text style={styles.parkTitle}>Park Name</Text>
           <Text>Location</Text>
         </View>
         <View>
@@ -39,6 +38,10 @@ const styles = StyleSheet.create({
     padding: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  parkTitle: {
+    fontSize: 18,
+    fontWeight: 700
   }
 
 })

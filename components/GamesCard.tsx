@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9',
     borderRadius: 10,
     flex: 0.2,
+    flexShrink: 0,
     minHeight: 100,
     justifyContent: 'flex-end',
   },
