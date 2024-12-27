@@ -5,7 +5,7 @@ const GamesCard = () => {
   return (
     <View style={styles.gameContainer}>
       <Image /> 
-      <View style={{flexDirection: 'row', alignItems: 'flex-end', gap: 4 }}>
+      <View>
         <Text style={styles.gameTitle}>Game Name:</Text>
         <Text style={styles.statusTitle}>Game Status</Text>
       </View>
