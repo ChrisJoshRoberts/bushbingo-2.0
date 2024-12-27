@@ -8,3 +8,8 @@ export interface NavIconProps {
 export interface CardButtonProps {
   title: string;
 }
+
+export interface GamesCardProps {
+  title: string;
+  status: string;
+}
