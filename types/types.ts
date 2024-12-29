@@ -12,4 +12,5 @@ export interface CardButtonProps {
 export interface GamesCardProps {
   title: string;
   status: string;
+  image : string;
 }

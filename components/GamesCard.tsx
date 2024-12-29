@@ -1,19 +1,24 @@
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Dimensions, Image, ImageBackground, StyleSheet, Text, View } from "react-native"
 import { GamesCardProps } from "../types/types"
+import { LinearGradient } from 'expo-linear-gradient';
 
-const GamesCard = ({title, status}: GamesCardProps) => {
+
+const cardWidth = Dimensions.get('window').width * 0.90
+
+const GamesCard = ({title, status, image}: GamesCardProps) => {
   return (
-    <View style={styles.gameContainer}>
-      <Image
-        source={{uri: 'https://www.andbeyond.com/wp-content/uploads/sites/5/A-tender-moment-between-Lioness-and-cub.jpg'}}
-        style={{ width: '100%', height: '100%' }}
-        resizeMode="cover"
-      /> 
-      <View style={{padding: 10}}>
+    <ImageBackground 
+      source={{uri: image}}
+      resizeMode="cover"
+      style={styles.gameContainer}
+    >
+      <LinearGradient
+        colors={[ "transparent", "rgba(0, 0, 0, 0.8)",]}
+        style={styles.contentContainer}>
         <Text style={styles.gameTitle}>{title}</Text>
         <Text style={styles.statusTitle}>{status}</Text>
-      </View>
-    </View>
+      </LinearGradient>
+    </ImageBackground>
   )
 }
 
@@ -21,20 +26,34 @@ export default GamesCard
 
 const styles = StyleSheet.create({
   gameContainer : {
-    overflow:'hidden',
-    width: '100%',
+    width: cardWidth,
+    height: 200,
     marginLeft: 10,
     backgroundColor: '#fff',
     borderRadius: 10,
     minHeight: 100,
     justifyContent: 'flex-end',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.7,
+    shadowRadius: 3.84,
+    elevation: 5,
+    overflow: 'hidden'
+  },
+  contentContainer : {
+    padding: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
   gameTitle: {
-    color: '#000',
+    color: '#fff',
     fontSize: 18,
     fontWeight: 700
   },
   statusTitle: {
-    color: '#000'
+    color: '#fff'
   }
 })
