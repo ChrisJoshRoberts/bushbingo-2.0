@@ -33,10 +33,3 @@ const GamesCarousel = () => {
 }
 
 export default GamesCarousel
-
-const styles = StyleSheet.create({
-  gameCarouselContainer: {
-    gap: 10,
-    paddingHorizontal: 12
-  }
-})
