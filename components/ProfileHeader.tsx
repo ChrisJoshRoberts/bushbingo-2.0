@@ -4,13 +4,14 @@ const ProfileHeader = () => {
   return (
     <View style={styles.profileContainer}>
       <Image
+        source={{uri: 'https://lh3.googleusercontent.com/ogw/AF2bZyhWlQcSN_wA9b_achjqL3hgr-IENfatyMVWdLg55HHvvfQ=s64-c-mo'}}
         width={50}
         height={50}
         style={styles.avatar}
       />
       <View>
-        <Text style={styles.profileTitle}>Name</Text>
-        <Text>Rank</Text>
+        <Text style={styles.profileTitle}>Welcome Chris</Text>
+        <Text>Explorer</Text>
       </View>
     </View>
   )
@@ -20,14 +21,13 @@ export default ProfileHeader
 
 const styles = StyleSheet.create({
   profileContainer: {
-    paddingTop: 16,
+    paddingVertical: 16,
     width: '100%',
     flexDirection: 'row',
     paddingHorizontal: 16,
     alignItems: 'center'
   },
   avatar: {
-    backgroundColor: 'gray',
     borderRadius: 100,
     marginRight: 8
   },

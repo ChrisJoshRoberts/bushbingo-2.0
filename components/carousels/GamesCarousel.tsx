@@ -1,5 +1,6 @@
-import { Dimensions, FlatList, StyleSheet, View } from "react-native"
+import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native"
 import GamesCard from "../GamesCard"
+import IconButton from "../buttons/IconButton";
 
 const { width } = Dimensions.get('window')
 const cardWidth = width * 0.9;
@@ -12,6 +13,15 @@ const data = [
 ]
 
 const GamesCarousel = () => {
+
+  {data.length === 0 && 
+    <View>
+      <Text>No Games yet</Text>
+      <Text>Start new game</Text>
+      <IconButton />
+    </View>
+  }
+
   return (
     <View style={{width: width, height: 240}}>
       <FlatList 
