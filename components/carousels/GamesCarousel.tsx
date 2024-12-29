@@ -22,6 +22,7 @@ const GamesCarousel = () => {
         keyExtractor={(item) => item.id}
         snapToAlignment="start"
         snapToInterval={cardWidth + spacing}
+        pagingEnabled
         contentContainerStyle={{paddingHorizontal: spacing}}
         renderItem={({item}) => 
         <GamesCard title={item.title} status={item.status} image={item.image}  />
