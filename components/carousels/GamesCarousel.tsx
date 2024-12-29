@@ -2,8 +2,8 @@ import { Dimensions, FlatList, StyleSheet, View } from "react-native"
 import GamesCard from "../GamesCard"
 
 const { width } = Dimensions.get('window')
-const cardWidth = width * 0.8;
-const spacing = 10
+const cardWidth = width * 0.9;
+const spacing = 12
 
 const data = [
   {id: '1', title: 'Test Game', status: 'Pending', image: 'https://www.andbeyond.com/wp-content/uploads/sites/5/A-tender-moment-between-Lioness-and-cub.jpg'},
@@ -21,9 +21,9 @@ const GamesCarousel = () => {
         data={data}
         keyExtractor={(item) => item.id}
         snapToAlignment="start"
+        decelerationRate="fast"
         snapToInterval={cardWidth + spacing}
-        pagingEnabled
-        contentContainerStyle={{paddingHorizontal: spacing}}
+        contentContainerStyle={{paddingHorizontal: spacing / 2}}
         renderItem={({item}) => 
         <GamesCard title={item.title} status={item.status} image={item.image}  />
         }
