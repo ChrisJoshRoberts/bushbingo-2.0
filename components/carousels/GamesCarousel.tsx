@@ -14,14 +14,16 @@ const data = [
 
 const GamesCarousel = () => {
 
-  {data.length === 0 && 
-    <View>
-      <Text>No Games yet</Text>
-      <Text>Start new game</Text>
-      <IconButton />
+  if (data.length === 0) {
+    return (
+      <View style={styles.noGameContainer}>
+        <IconButton />
+        <Text style={styles.noGameTitle}>No Games yet</Text>
+        <Text style={styles.noGameText}>Start new game</Text>
     </View>
+    )
   }
-
+  
   return (
     <View style={{width: width, height: 240}}>
       <FlatList 
@@ -43,3 +45,26 @@ const GamesCarousel = () => {
 }
 
 export default GamesCarousel
+
+const styles = StyleSheet.create({
+  noGameContainer : {
+    width: cardWidth,
+    height: 170,
+    marginLeft: 10,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderRadius: 10,
+    borderStyle: 'dashed',
+    borderColor: '#0000004D',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 8,
+  },
+  noGameTitle :{
+    fontSize: 18,
+    fontWeight: 700
+  },
+  noGameText: {
+    color: '#0000004D'
+  }
+})
