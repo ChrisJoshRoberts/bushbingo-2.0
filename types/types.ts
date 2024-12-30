@@ -20,3 +20,9 @@ export interface ParkCardProps {
   image: string;
   location: string;
 }
+
+export interface AnimalCardProps {
+  title: string;
+  image: string;
+  points: number;
+}

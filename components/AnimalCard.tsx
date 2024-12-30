@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native"
 import CardButton from "./CardButton"
 
 
-const AnimalCard = () => {
+const AnimalCard = ({title, points, image}: AnimalCardProps) => {
   return (
     <View style={styles.animalCardContainer}>
       <CardButton title="View" />

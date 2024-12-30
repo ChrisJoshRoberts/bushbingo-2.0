@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import NavBar from './components/NavBar';
 import ProfileHeader from './components/ProfileHeader';
 import ParkCard from './components/ParkCard';
@@ -11,10 +11,12 @@ import ParksCarousel from './components/carousels/ParksCarousel';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <ProfileHeader /> 
-      <GamesCarousel />
-      <ParksCarousel />
-      <AnimalCard />
+      <ScrollView>
+        <ProfileHeader /> 
+        <GamesCarousel />
+        <ParksCarousel />
+        <AnimalCard />
+      </ScrollView>
       <NavBar />
       <StatusBar style="auto" />
     </SafeAreaView>

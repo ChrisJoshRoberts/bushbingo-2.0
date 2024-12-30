@@ -11,7 +11,7 @@ const ProfileHeader = () => {
       />
       <View>
         <Text style={styles.profileTitle}>Welcome Chris</Text>
-        <Text>Explorer</Text>
+        <Text><Text style={{fontWeight: 700}}>Rank:</Text>Explorer</Text>
       </View>
     </View>
   )
