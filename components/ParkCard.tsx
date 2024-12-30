@@ -1,13 +1,14 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native"
+import { ParkCardProps } from "../types/types"
 
-const ParkCard = () => {
+const ParkCard = ({title, image, location}: ParkCardProps) => {
   return (
     <View style={styles.parkCardContainer}>
       <View style={styles.parkImage}></View>
       <View style={styles.parkDetails}>
         <View>
-          <Text style={styles.parkTitle}>Park Name</Text>
-          <Text>Location</Text>
+          <Text style={styles.parkTitle}>{title}</Text>
+          <Text>{location}</Text>
         </View>
         <View>
           <Pressable>

@@ -1,4 +1,4 @@
-import { Dimensions, Image, ImageBackground, StyleSheet, Text, View } from "react-native"
+import { Dimensions, Image, ImageBackground, Pressable, StyleSheet, Text, View } from "react-native"
 import { GamesCardProps } from "../types/types"
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -7,18 +7,20 @@ const cardWidth = Dimensions.get('window').width * 0.90
 
 const GamesCard = ({title, status, image}: GamesCardProps) => {
   return (
-    <ImageBackground 
-      source={{uri: image}}
-      resizeMode="cover"
-      style={styles.gameContainer}
-    >
-      <LinearGradient
-        colors={[ "transparent", "rgba(0, 0, 0, 0.8)",]}
-        style={styles.contentContainer}>
-        <Text style={styles.gameTitle}>{title}</Text>
-        <Text style={styles.statusTitle}>{status}</Text>
-      </LinearGradient>
-    </ImageBackground>
+    <Pressable>
+      <ImageBackground 
+        source={{uri: image}}
+        resizeMode="cover"
+        style={styles.gameContainer}
+      >
+        <LinearGradient
+          colors={[ "transparent", "rgba(0, 0, 0, 0.8)",]}
+          style={styles.contentContainer}>
+          <Text style={styles.gameTitle}>{title}</Text>
+          <Text style={styles.statusTitle}>{status}</Text>
+        </LinearGradient>
+      </ImageBackground>
+    </Pressable>
   )
 }
 

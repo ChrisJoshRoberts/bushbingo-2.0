@@ -1,4 +1,4 @@
-import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native"
+import { Dimensions, FlatList, Pressable, StyleSheet, Text, View } from "react-native"
 import GamesCard from "../GamesCard"
 import IconButton from "../buttons/IconButton";
 
@@ -16,11 +16,11 @@ const GamesCarousel = () => {
 
   if (data.length === 0) {
     return (
-      <View style={styles.noGameContainer}>
+      <Pressable style={styles.noGameContainer}>
         <IconButton />
         <Text style={styles.noGameTitle}>No Games yet</Text>
         <Text style={styles.noGameText}>Start new game</Text>
-    </View>
+    </Pressable>
     )
   }
   

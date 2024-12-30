@@ -5,6 +5,7 @@ import ProfileHeader from './components/ProfileHeader';
 import ParkCard from './components/ParkCard';
 import AnimalCard from './components/AnimalCard';
 import GamesCarousel from './components/carousels/GamesCarousel';
+import ParksCarousel from './components/carousels/ParksCarousel';
 
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <ProfileHeader /> 
       <GamesCarousel />
-      <ParkCard />
+      <ParksCarousel />
       <AnimalCard />
       <NavBar />
       <StatusBar style="auto" />

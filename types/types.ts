@@ -14,3 +14,9 @@ export interface GamesCardProps {
   status: string;
   image : string;
 }
+
+export interface ParkCardProps {
+  title: string;
+  image: string;
+  location: string;
+}
