@@ -1,5 +1,5 @@
 import { Dimensions, FlatList, Text, View } from "react-native"
-import ParkCard from "../ParkCard"
+import ParkCard from "../cards/ParkCard"
 import TextButton from "../buttons/TextButton"
 import SectionTitle from "../SectionTitle"
 

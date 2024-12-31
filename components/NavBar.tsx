@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   navContainer: {
     position: 'absolute',
     bottom: 32,
-    height: 64,
+    height: 70,
     backgroundColor: '#003324',
     alignItems: 'center',
     width: '95%',

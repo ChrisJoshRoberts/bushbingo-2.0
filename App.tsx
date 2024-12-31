@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import NavBar from './components/NavBar';
 import ProfileHeader from './components/ProfileHeader';
 import GamesCarousel from './components/carousels/GamesCarousel';

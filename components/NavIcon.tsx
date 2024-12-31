@@ -31,7 +31,9 @@ const styles = StyleSheet.create({
   navTitle: {
     marginTop: 4,
     color: '#fff',
-    fontWeight: 600
+    fontWeight: 600,
+    fontSize: 9,
+    opacity: 0.5
   },
   icon: {
 

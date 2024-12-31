@@ -1,5 +1,5 @@
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native"
-import { ParkCardProps } from "../types/types"
+import { ParkCardProps } from "../../types/types"
 
 const pardCardWidth = Dimensions.get('window').width * 0.55
 
@@ -15,13 +15,16 @@ const ParkCard = ({title, image, location}: ParkCardProps) => {
       <View style={styles.parkDetails}>
         <View>
           <Text style={styles.parkTitle}>{title}</Text>
-          <Text>{location}</Text>
+          <Text style={{color: '#003324', opacity: 0.5}}>{location}</Text>
         </View>
         <View>
           <Pressable>
             <Image 
-              source={require('../assets/images/arrow.png')}
-              style={{padding: 2}}
+              source={require('../../assets/images/arrow.png')}
+              width={12}
+              height={12}
+              style={{padding: 6}}
+              resizeMode="contain"
             />
           </Pressable>
         </View>
@@ -59,7 +62,8 @@ const styles = StyleSheet.create({
   },
   parkTitle: {
     fontSize: 18,
-    fontWeight: 700
+    fontWeight: 700,
+    color: '#003324'
   }
 
 })

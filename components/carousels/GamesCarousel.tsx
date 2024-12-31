@@ -1,5 +1,5 @@
 import { Dimensions, FlatList, Pressable, StyleSheet, Text, View } from "react-native"
-import GamesCard from "../GamesCard"
+import GamesCard from "../cards/GamesCard"
 import IconButton from "../buttons/IconButton";
 
 const { width } = Dimensions.get('window')
@@ -48,23 +48,25 @@ export default GamesCarousel
 
 const styles = StyleSheet.create({
   noGameContainer : {
-    width: cardWidth,
+    width: cardWidth + 25,
     height: 170,
     marginLeft: 10,
     marginBottom: 10,
     borderWidth: 1,
     borderRadius: 10,
     borderStyle: 'dashed',
-    borderColor: '#0000004D',
+    borderColor: '#8BC652',
     justifyContent: 'center',
     alignItems: 'center',
     gap: 8,
+    backgroundColor: '#E8D9CB'
   },
   noGameTitle :{
     fontSize: 18,
-    fontWeight: 700
+    fontWeight: 700,
+    color: '#003324'
   },
   noGameText: {
-    color: '#0000004D'
+    color: '#F76711'
   }
 })

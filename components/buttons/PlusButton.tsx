@@ -8,7 +8,6 @@ const PlusButton = () => {
       <Image 
         source={require('../../assets/images/nav-icons/plus-icon.png')}
       />
-
     </View>
   )
 }
@@ -17,8 +16,8 @@ export default PlusButton
 
 const styles = StyleSheet.create({
   plusButtonContainer: {
-    width: 80,
-    height: 80,
+    width: 85,
+    height: 85,
     borderRadius: 100,
     backgroundColor: '#8BC652',
     justifyContent: 'center',
