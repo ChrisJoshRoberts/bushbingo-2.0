@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import NavBar from './components/NavBar';
 import ProfileHeader from './components/ProfileHeader';
-import AnimalCard from './components/AnimalCard';
 import GamesCarousel from './components/carousels/GamesCarousel';
 import ParksCarousel from './components/carousels/ParksCarousel';
 import AnimalCarousel from './components/carousels/AnimalCarousel';
@@ -31,5 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     height: '100%',
+    backgroundColor: '#F5EBE2'
   },
 });

@@ -20,7 +20,7 @@ const GamesCarousel = () => {
         <IconButton />
         <Text style={styles.noGameTitle}>No Games yet</Text>
         <Text style={styles.noGameText}>Start new game</Text>
-    </Pressable>
+      </Pressable>
     )
   }
   

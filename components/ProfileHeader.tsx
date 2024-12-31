@@ -11,7 +11,7 @@ const ProfileHeader = () => {
       />
       <View>
         <Text style={styles.profileTitle}>Welcome Chris</Text>
-        <Text><Text style={{fontWeight: 700}}>Rank:</Text>Explorer</Text>
+        <Text style={{color: '#003324'}}><Text style={{fontWeight: 700, color: '#F76711'}}>Rank: </Text>Explorer</Text>
       </View>
     </View>
   )
@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
     marginRight: 8
   },
   profileTitle: {
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: 700,
+    color: '#003324'
   }
 
 })

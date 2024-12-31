@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 10,
     width: cardWidth,
-    backgroundColor: '#fff',
+    backgroundColor: '#E8D9CB',
     borderRadius: 10,
     flexShrink: 0,
     minHeight: 100,
