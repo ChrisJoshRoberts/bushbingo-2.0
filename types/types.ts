@@ -23,6 +23,6 @@ export interface ParkCardProps {
 
 export interface AnimalCardProps {
   title: string;
-  image: string;
+  image: ImageSourcePropType;
   points: number;
 }
