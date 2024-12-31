@@ -1,5 +1,7 @@
-import { Dimensions, FlatList, StyleSheet, View } from "react-native"
+import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native"
 import AnimalCard from "../AnimalCard"
+import TextButton from "../buttons/TextButton"
+import SectionTitle from "../SectionTitle"
 
 const AnimalData = [
   {id: '1', title: 'Lion', points: 10, image: require('../../assets/images/animals/male-lion.png')},
@@ -12,6 +14,7 @@ const { width } = Dimensions.get('window')
 const AnimalCarousel = () => {
   return (
     <View style={styles.animalCardContainer}> 
+      <SectionTitle title='All Animals' /> 
       <FlatList 
         data={AnimalData}
         keyExtractor={(item) => item.id}

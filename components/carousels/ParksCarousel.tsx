@@ -1,6 +1,7 @@
 import { Dimensions, FlatList, Text, View } from "react-native"
 import ParkCard from "../ParkCard"
 import TextButton from "../buttons/TextButton"
+import SectionTitle from "../SectionTitle"
 
 const { width } = Dimensions.get('window')
 
@@ -14,10 +15,7 @@ const data = [
 const ParksCarousel = () => {
   return (
     <View style={{width: width, height: 260,}}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginHorizontal: 10}}>
-        <Text style={{fontSize: 22, fontWeight: 700}}>Parks</Text>
-        <TextButton />
-      </View>
+      <SectionTitle title='All Parks' />
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
