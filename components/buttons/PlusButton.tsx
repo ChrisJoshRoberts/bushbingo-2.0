@@ -6,7 +6,7 @@ const PlusButton = () => {
   return (
     <View style={styles.plusButtonContainer}>
       <Image 
-        source={require('../../assets/images/nav-icons/plus-icon.png')}
+        source={require('../../assets/images/nav-icons/plus-icon@x1.5.png')}
       />
     </View>
   )
@@ -30,5 +30,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-  }
+  },
 })
