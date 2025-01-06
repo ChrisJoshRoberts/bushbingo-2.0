@@ -29,11 +29,11 @@ const AnimalCard = ({title, points, image, category, status, diet, lifespan}: An
               <Text style={styles.animalPoints}>{points}</Text>
           </View>
         </View>
-        <View style={{height: '30%',justifyContent: 'center', marginTop: 5}}>
+        <View style={{height: '30%',justifyContent: 'center'}}>
           <Text style={{color: '#8BC652', fontWeight: 700}}>Diet: <Text style={{color: '#003324'}}>{diet}</Text></Text>
         </View>
       </View>
-      <CardButton title="View" />
+      {/* <CardButton title="View" /> */}
     </View>
   )
 }
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexShrink: 0,
     minHeight: 100,
-    height: 180,
+    height: 170,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -59,11 +59,8 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   animalImage: {
-    width: 100,
-    height: '90%',
-    borderRadius: 10,
-    backgroundColor: '#0033241A',
-    margin: 10
+    width: '30%',
+    height: '100%',
   },
   cardContentContainer : {
     flex: 1,
@@ -98,8 +95,9 @@ const styles = StyleSheet.create({
     color: '#003324'
   },
   pointsContainer: {
-    backgroundColor: '#0033241A',
-    padding: 10,
+    backgroundColor: '#0033240D',
+    paddingVertical: 8,
+    paddingHorizontal: 10,
     borderRadius: 10,
     flexDirection: 'row',
     width: '96%',
