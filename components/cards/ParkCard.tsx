@@ -20,10 +20,8 @@ const ParkCard = ({title, image, location}: ParkCardProps) => {
         <View>
           <Pressable>
             <Image 
-              source={require('../../assets/images/arrow.png')}
-              width={12}
-              height={12}
-              style={{padding: 6}}
+              source={require('../../assets/images/arrow@x4.png')}
+              style={{width: 24, height: 24, marginLeft: 4}}
               resizeMode="contain"
             />
           </Pressable>

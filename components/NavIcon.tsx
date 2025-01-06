@@ -17,7 +17,6 @@ const NavIcon = ({title , image} : NavIconProps) => {
       </Pressable>
       <Text style={styles.navTitle}>{title}</Text>
     </View>
-
   )
 }
 
@@ -36,6 +35,8 @@ const styles = StyleSheet.create({
     opacity: 0.5
   },
   icon: {
-
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
   }
 })
