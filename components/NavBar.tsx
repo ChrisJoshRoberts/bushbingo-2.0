@@ -1,19 +1,22 @@
 import { StyleSheet, View } from "react-native"
 import NavIcon from "./NavIcon"
 import PlusButton from "./buttons/PlusButton"
-import { LayoutDashboard } from "lucide-react-native"
+import { LayoutDashboard, Eye,  MessageCircleMore, UserRound } from "lucide-react-native"
 
-const dashboardIcon = <LayoutDashboard size={24} color={'#fff'} />
+const dashboardIconActive = <LayoutDashboard size={24} color={'#fff'} fill={'#fff'}/>
+const sightingsIcon = <Eye size={24} color={'#fff'} strokeWidth={1.5}/>
+const messagesIcon =  <MessageCircleMore size={24} color={'#fff'} strokeWidth={1.5}/>
+const profileIcon = <UserRound size={24} color={'#fff'} strokeWidth={1.5}/>
 
 
 const NavBar = () => {
   return (
     <View style={styles.navContainer}>
-      <NavIcon title={'Home'} image={dashboardIcon} /> 
-      <NavIcon title={'Sightings'} image={require('../assets/images/nav-icons/binoculars@x2.png')} /> 
+      <NavIcon title={'Home'} image={dashboardIconActive} /> 
+      <NavIcon title={'Sightings'} image={sightingsIcon} /> 
       <PlusButton />
-      <NavIcon title={'messages'} image={require('../assets/images/nav-icons/chat-bubble-1@x3.png')} /> 
-      <NavIcon title={'profile'} image={require('../assets/images/nav-icons/user@x3.png')} /> 
+      <NavIcon title={'messages'} image={messagesIcon} /> 
+      <NavIcon title={'profile'} image={profileIcon} /> 
     </View>
   )
 }

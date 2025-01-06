@@ -1,13 +1,11 @@
 import { Image, StyleSheet, View } from "react-native"
-import IconButton from "./IconButton"
+import { Plus } from 'lucide-react-native'
 
 
 const PlusButton = () => {
   return (
     <View style={styles.plusButtonContainer}>
-      <Image 
-        source={require('../../assets/images/nav-icons/plus-icon@x1.5.png')}
-      />
+      <Plus size={48} color={'#fff'} />
     </View>
   )
 }
