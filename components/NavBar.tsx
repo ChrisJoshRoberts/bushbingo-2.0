@@ -1,11 +1,15 @@
 import { StyleSheet, View } from "react-native"
 import NavIcon from "./NavIcon"
 import PlusButton from "./buttons/PlusButton"
+import { LayoutDashboard } from "lucide-react-native"
+
+const dashboardIcon = <LayoutDashboard size={24} color={'#fff'} />
+
 
 const NavBar = () => {
   return (
     <View style={styles.navContainer}>
-      <NavIcon title={'Home'} image={require('../assets/images/nav-icons/dashboard@x3.png')} /> 
+      <NavIcon title={'Home'} image={dashboardIcon} /> 
       <NavIcon title={'Sightings'} image={require('../assets/images/nav-icons/binoculars@x2.png')} /> 
       <PlusButton />
       <NavIcon title={'messages'} image={require('../assets/images/nav-icons/chat-bubble-1@x3.png')} /> 

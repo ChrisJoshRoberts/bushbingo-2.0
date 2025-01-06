@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, View, Image} from "react-native"
 import { NavIconProps } from "../types/types"
 
+
 const NavIcon = ({title , image} : NavIconProps) => {
 
   const onPressHandler = () => {
@@ -10,10 +11,7 @@ const NavIcon = ({title , image} : NavIconProps) => {
   return (
     <View style={styles.tabContainer}>
       <Pressable onPress={onPressHandler}>
-        <Image
-          source={image}
-          style={styles.icon}
-        />
+        <Text>{image}</Text>
       </Pressable>
       <Text style={styles.navTitle}>{title}</Text>
     </View>
