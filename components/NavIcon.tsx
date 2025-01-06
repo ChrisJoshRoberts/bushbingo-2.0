@@ -10,9 +10,7 @@ const NavIcon = ({title , image} : NavIconProps) => {
 
   return (
     <View style={styles.tabContainer}>
-      <Pressable onPress={onPressHandler}>
-        <Text>{image}</Text>
-      </Pressable>
+      <Text>{image}</Text>
       <Text style={styles.navTitle}>{title}</Text>
     </View>
   )
