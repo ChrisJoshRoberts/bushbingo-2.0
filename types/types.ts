@@ -1,4 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 export interface NavIconProps {
   title: string,
@@ -33,4 +34,10 @@ export interface AnimalCardProps {
 
 export interface SectionTitleProps {
   title: string;
+}
+
+export interface NavBarProps {
+    scrollY: number;
+    navigation: BottomTabBarProps["navigation"];
+    state: BottomTabBarProps["state"];
 }

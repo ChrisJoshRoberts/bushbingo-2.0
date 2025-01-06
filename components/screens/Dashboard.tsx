@@ -1,20 +1,35 @@
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
-import React from 'react'
+import { Animated, SafeAreaView, ScrollView, StyleSheet, NativeSyntheticEvent, NativeScrollEvent } from 'react-native'
+import React, { useRef } from 'react'
 import ProfileHeader from '../ProfileHeader'
 import GamesCarousel from '../carousels/GamesCarousel'
 import ParksCarousel from '../carousels/ParksCarousel'
 import AnimalCarousel from '../carousels/AnimalCarousel'
 import { StatusBar } from 'expo-status-bar'
 
-const Dashboard = () => {
+const Dashboard = ({ setScrollY }: any) => {
+  const scrollY = useRef(new Animated.Value(0)).current
+
+  const onScroll = Animated.event(
+    [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+    {
+      useNativeDriver: true, 
+      listener: (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        setScrollY(event.nativeEvent.contentOffset.y);
+      },
+    }
+  )
+
   return (
     <SafeAreaView style={styles.container}>
-    <ScrollView>
+    <Animated.ScrollView
+      onScroll={onScroll}
+      scrollEventThrottle={16}
+    >
       <ProfileHeader /> 
       <GamesCarousel />
       <ParksCarousel />
       <AnimalCarousel />
-    </ScrollView>
+    </Animated.ScrollView>
     <StatusBar style="dark" />
   </SafeAreaView>
 

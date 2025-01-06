@@ -1,5 +1,6 @@
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native"
 import { ParkCardProps } from "../../types/types"
+import { ArrowRight } from 'lucide-react-native';
 
 const pardCardWidth = Dimensions.get('window').width * 0.55
 
@@ -19,11 +20,7 @@ const ParkCard = ({title, image, location}: ParkCardProps) => {
         </View>
         <View>
           <Pressable>
-            <Image 
-              source={require('../../assets/images/arrow@x4.png')}
-              style={{width: 24, height: 24, marginLeft: 4}}
-              resizeMode="contain"
-            />
+            <ArrowRight size={24} color={'#8BC652'} />  
           </Pressable>
         </View>
       </View>
