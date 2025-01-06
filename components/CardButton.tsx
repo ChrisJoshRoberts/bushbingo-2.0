@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: 0,
-    width: '30%',
-    height: 50,
+    width: '25%',
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
     borderTopLeftRadius: 10,
     borderBottomRightRadius: 10,
-    backgroundColor: '#F76711',
+    backgroundColor: '#003324',
   }
 }) 

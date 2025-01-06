@@ -25,6 +25,7 @@ export interface AnimalCardProps {
   title: string;
   image: ImageSourcePropType;
   points: number;
+  category: string;
 }
 
 export interface SectionTitleProps {
