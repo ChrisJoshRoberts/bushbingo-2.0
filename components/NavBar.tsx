@@ -16,9 +16,13 @@ const NavBar = (props: BottomTabBarProps) => {
     <View style={styles.navContainer}>
       {routes.map((route, index) => {
         const isFocused = props.state.index === index
-        const icon = route.name === 'Home' ? dashboardIconActive : 
-                     route.name === 'Sightings' ? sightingsIcon : 
-                     route.name === 'Messages' ? messagesIcon : profileIcon
+        const icon = route.name === "Home"
+          ? <LayoutDashboard size={24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
+          : route.name === "Sightings"
+          ? <Eye size={24} color={isFocused ? "#8BC652" : "#fff"} strokeWidth={isFocused ? 1.5 : 1} fill={isFocused ? "#8BC652" : "#003324"} stroke={isFocused? "#003324" : "#fff"}/>
+          : route.name === "Messages"
+          ? <MessageCircleMore size={24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
+          : <UserRound size={24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />;
 
         return (
           <TouchableOpacity

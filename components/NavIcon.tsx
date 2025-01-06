@@ -1,12 +1,8 @@
-import { Pressable, StyleSheet, Text, View, Image} from "react-native"
+import { StyleSheet, Text, View, Image} from "react-native"
 import { NavIconProps } from "../types/types"
 
 
 const NavIcon = ({title , image} : NavIconProps) => {
-
-  const onPressHandler = () => {
-    console.log(image)
-  }
 
   return (
     <View style={styles.tabContainer}>
