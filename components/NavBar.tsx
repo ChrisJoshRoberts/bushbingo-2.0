@@ -20,7 +20,6 @@ const NavBar = (props: BottomTabBarProps) => {
           <TouchableOpacity
             key={route.name}
             onPress={() => {
-              console.log(route.name);
               props.navigation.navigate(route.name);
             }}
           >
