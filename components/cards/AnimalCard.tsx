@@ -1,5 +1,5 @@
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native"
-import CardButton from "../CardButton"
+import CardButton from "../buttons/CardButton"
 import { AnimalCardProps } from "../../types/types"
 
 const cardWidth = Dimensions.get('window').width * 0.95

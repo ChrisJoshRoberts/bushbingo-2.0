@@ -1,5 +1,5 @@
 import { Alert, Button, StyleSheet, View } from "react-native"
-import { CardButtonProps } from "../types/types"
+import { CardButtonProps } from "../../types/types"
 
 
 const CardButton = ({title}: CardButtonProps) => {
