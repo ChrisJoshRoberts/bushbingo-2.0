@@ -1,4 +1,4 @@
-import { Animated, SafeAreaView, ScrollView, StyleSheet, NativeSyntheticEvent, NativeScrollEvent } from 'react-native'
+import { Animated, SafeAreaView, StyleSheet, NativeSyntheticEvent, NativeScrollEvent } from 'react-native'
 import React, { useRef } from 'react'
 import ProfileHeader from '../ProfileHeader'
 import GamesCarousel from '../carousels/GamesCarousel'
@@ -8,7 +8,6 @@ import { StatusBar } from 'expo-status-bar'
 
 const Dashboard = ({ setScrollY }: any) => {
   const scrollY = useRef(new Animated.Value(0)).current
-
   const onScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { y: scrollY } } }],
     {
@@ -18,7 +17,6 @@ const Dashboard = ({ setScrollY }: any) => {
       },
     }
   )
-
   return (
     <SafeAreaView style={styles.container}>
     <Animated.ScrollView

@@ -50,8 +50,8 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
       {routes.slice(2).map((route, index) => {
         const isFocused = state.index === index + 2; // Adjust index for the slice
         const icon = route.name === "Messages"
-          ? <MessageCircleMore size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
-          : <UserRound size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />;
+          ? <MessageCircleMore size={isFocused ? 34 : 24} color={isFocused ? "#003324" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
+          : <UserRound size={isFocused ? 34 : 24} color={isFocused ? "#003324" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />;
 
         return (
           <TouchableOpacity
