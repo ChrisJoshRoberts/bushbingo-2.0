@@ -4,6 +4,7 @@ import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 export interface NavIconProps {
   title: string,
   image: JSX.Element;
+  state: boolean;
 }
 
 export interface CardButtonProps {

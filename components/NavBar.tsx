@@ -26,8 +26,8 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
       {routes.slice(0, 2).map((route, index) => {
         const isFocused = state.index === index;
         const icon = route.name === "Home"
-          ? <LayoutDashboard size={24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
-          : <Eye size={24} color={isFocused ? "#8BC652" : "#fff"} strokeWidth={isFocused ? 1.5 : 1} fill={isFocused ? "#8BC652" : "#003324"} stroke={isFocused ? "#003324" : "#fff"} />;
+          ? <LayoutDashboard size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
+          : <Eye size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} strokeWidth={isFocused ? 1.5 : 1} fill={isFocused ? "#8BC652" : "#003324"} stroke={isFocused ? "#003324" : "#fff"} />;
 
         return (
           <TouchableOpacity
@@ -36,30 +36,31 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
               navigation.navigate(route.name);
             }}
           >
-            <NavIcon title={route.name} image={icon} />
+            <NavIcon title={route.name} image={icon} state={isFocused}/>
           </TouchableOpacity>
         );
       })}
 
       {/* Render the central PlusButton */}
-      <PlusButton />
+      <TouchableOpacity>
+        <PlusButton />
+      </TouchableOpacity>
 
       {/* Render the last two routes */}
       {routes.slice(2).map((route, index) => {
         const isFocused = state.index === index + 2; // Adjust index for the slice
         const icon = route.name === "Messages"
-          ? <MessageCircleMore size={24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
-          : <UserRound size={24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />;
+          ? <MessageCircleMore size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
+          : <UserRound size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />;
 
         return (
           <TouchableOpacity
             key={route.name}
             onPress={() => {
-              console.log(route.name);
               navigation.navigate(route.name);
             }}
           >
-            <NavIcon title={route.name} image={icon} />
+            <NavIcon title={route.name} image={icon} state={isFocused}/>
           </TouchableOpacity>
         );
       })}
