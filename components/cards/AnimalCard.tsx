@@ -4,7 +4,7 @@ import { AnimalCardProps } from "../../types/types"
 
 const cardWidth = Dimensions.get('window').width * 0.95
 
-const AnimalCard = ({title, points, image, category}: AnimalCardProps) => {
+const AnimalCard = ({title, points, image, category, status, diet, lifespan}: AnimalCardProps) => {
   return (
     <View style={styles.animalCardContainer}>
       <Image 
@@ -16,14 +16,21 @@ const AnimalCard = ({title, points, image, category}: AnimalCardProps) => {
         <Text style={styles.animalCategory}>{category}</Text>
         <Text style={styles.animalTitle}>{title}</Text>
         <View style={styles.pointsContainer}>
-          <View style={styles.innerCardDetialContainer}> 
-            <Text>Points</Text>
-            <Text style={styles.animalPoints}>{points}</Text>
+          <View style={styles.innerCardDetialContainer}>
+              <Text style={styles.innerTitle}>Status</Text>
+              <Text style={styles.animalStatus}>{status}</Text>
           </View>
-          <View>
-            <Text>Rarity</Text>
-            <Text style={styles.animalPoints}>{points}</Text>
+          <View style={styles.innerCardDetialContainer}>
+              <Text style={styles.innerTitle}>Lifespan</Text>
+              <Text style={styles.animalStatus}>{lifespan}</Text>
           </View>
+          <View> 
+              <Text style={styles.innerTitle}>Points</Text>
+              <Text style={styles.animalPoints}>{points}</Text>
+          </View>
+        </View>
+        <View style={{height: '30%',justifyContent: 'center', marginTop: 5}}>
+          <Text style={{color: '#8BC652', fontWeight: 700}}>Diet: <Text style={{color: '#003324'}}>{diet}</Text></Text>
         </View>
       </View>
       <CardButton title="View" />
@@ -42,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexShrink: 0,
     minHeight: 100,
-    height: 190,
+    height: 180,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -63,7 +70,8 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingVertical: 16,
     alignItems: 'flex-start',
-    gap: 4
+    gap: 4,
+    marginLeft: 1
   },
   animalTitle: {
     fontSize: 22,
@@ -80,7 +88,12 @@ const styles = StyleSheet.create({
     color: '#F5EBE2'
   },
   animalPoints: {
-    fontSize: 22,
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#003324'
+  },
+  animalStatus: {
+    fontSize: 14,
     fontWeight: '700',
     color: '#003324'
   },
@@ -89,9 +102,16 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     flexDirection: 'row',
-    width: '95%',
+    width: '96%',
+    justifyContent: 'space-between',
   },
   innerCardDetialContainer: {
-    marginRight: 24,
+    paddingRight: 5
+  },
+  innerTitle: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: '#003324',
+    opacity: 0.75
   }
 })

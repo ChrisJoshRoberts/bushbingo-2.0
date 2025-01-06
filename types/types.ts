@@ -26,6 +26,9 @@ export interface AnimalCardProps {
   image: ImageSourcePropType;
   points: number;
   category: string;
+  status: string;
+  diet: string;
+  lifespan: string;
 }
 
 export interface SectionTitleProps {
