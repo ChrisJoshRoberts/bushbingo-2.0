@@ -1,10 +1,12 @@
-import { Animated, SafeAreaView, StyleSheet, NativeSyntheticEvent, NativeScrollEvent } from 'react-native'
+import { Animated, SafeAreaView, StyleSheet, NativeSyntheticEvent, NativeScrollEvent, View } from 'react-native'
 import React, { useRef } from 'react'
 import ProfileHeader from '../ProfileHeader'
 import GamesCarousel from '../carousels/GamesCarousel'
 import ParksCarousel from '../carousels/ParksCarousel'
 import AnimalCarousel from '../carousels/AnimalCarousel'
 import { StatusBar } from 'expo-status-bar'
+import colors from '../../constants/Colors'
+import SpacerLine from '../SpacerLine'
 
 const Dashboard = ({ setScrollY }: any) => {
   const scrollY = useRef(new Animated.Value(0)).current
@@ -25,7 +27,9 @@ const Dashboard = ({ setScrollY }: any) => {
     >
       <ProfileHeader /> 
       <GamesCarousel />
+      <SpacerLine />
       <ParksCarousel />
+      <SpacerLine />
       <AnimalCarousel />
     </Animated.ScrollView>
     <StatusBar style="dark" />

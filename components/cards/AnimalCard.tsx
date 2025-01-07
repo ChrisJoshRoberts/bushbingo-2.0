@@ -30,11 +30,7 @@ const AnimalCard = ({title, points, image, category, status, diet, lifespan}: An
               <Text style={styles.animalPoints}>{points}</Text>
           </View>
         </View>
-        {/* <View style={{height: '30%',justifyContent: 'center'}}>
-          <Text style={{color: '#8BC652', fontWeight: 700}}>Diet: <Text style={{color: '#003324'}}>{diet}</Text></Text>
-        </View> */}
       </View>
-      {/* <CardButton title="View" /> */}
     </View>
   )
 }

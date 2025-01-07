@@ -1,6 +1,7 @@
 import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native"
 import AnimalCard from "../cards/AnimalCard"
 import SectionTitle from "../SectionTitle"
+import colors from "../../constants/Colors"
 
 const AnimalData = [
   {id: '1', title: 'Lion', points: 10, image: require('../../assets/images/animals/male-lion.png'), category: 'Big Cats', status: 'Safe', diet: 'Carnivore', lifespan: '20 years'},
@@ -31,6 +32,9 @@ const AnimalCarousel = () => {
         scrollEnabled={false}
         contentContainerStyle={{alignItems: 'center'}}
       />
+      <View style={styles.viewAllContainer}>
+        <Text style={styles.viewAllTitle}>View all animals</Text>
+      </View>
     </View>
   )
 }
@@ -42,5 +46,19 @@ const styles = StyleSheet.create({
     width: width,
     justifyContent: 'center',
     marginBottom: 10
+  },
+  viewAllContainer: {
+    width: width,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  viewAllTitle: {
+    color: colors.orange,
+    fontWeight: 700,
+    backgroundColor: colors.primeGreen5,
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 5
   }
 })
