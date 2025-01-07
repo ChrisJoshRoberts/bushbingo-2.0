@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native"
 import colors from "../constants/Colors"
 
+
 const ProfileHeader = () => {
   return (
     <View style={styles.profileContainer}>
