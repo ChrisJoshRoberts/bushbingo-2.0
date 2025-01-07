@@ -1,12 +1,14 @@
-import { Image, StyleSheet, View } from "react-native"
+import { Image, Pressable, StyleSheet, View } from "react-native"
 import { Plus } from 'lucide-react-native'
 
 
 const PlusButton = () => {
   return (
-    <View style={styles.plusButtonContainer}>
-      <Plus size={48} color={'#fff'} />
-    </View>
+    <Pressable>
+      <View style={styles.plusButtonContainer}>
+        <Plus size={48} color={'#fff'} />
+      </View>
+    </Pressable>
   )
 }
 

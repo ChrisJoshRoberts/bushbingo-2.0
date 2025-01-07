@@ -1,10 +1,9 @@
-import { Animated, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Animated, Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
 import NavIcon from "./NavIcon";
 import { LayoutDashboard, Eye, MessageCircleMore, UserRound } from "lucide-react-native";
 import PlusButton from "./buttons/PlusButton";
 import { NavBarProps } from "../types/types";
 import { useEffect, useRef } from "react";
-
 
 const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
   const routes = state.routes;
@@ -13,12 +12,11 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
   useEffect(() => {
     // Animate the NavBar based on the scroll position
     Animated.timing(translateY, {
-      toValue: scrollY > 50 ? 100 : 0, // Hide the NavBar after scrolling down 50px
+      toValue: scrollY > 50 ? 100 : 0,
       duration: 70,
       useNativeDriver: true,
     }).start();
   }, [scrollY]);
-
 
   return (
     <Animated.View style={[styles.navContainer, {transform: [{translateY}]}]}>
@@ -26,9 +24,17 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
       {routes.slice(0, 2).map((route, index) => {
         const isFocused = state.index === index;
         const icon = route.name === "Home"
-          ? <LayoutDashboard size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
-          : <Eye size={isFocused ? 34 : 24} color={isFocused ? "#8BC652" : "#fff"} strokeWidth={isFocused ? 1.5 : 1} fill={isFocused ? "#8BC652" : "#003324"} stroke={isFocused ? "#003324" : "#fff"} />;
-
+          ? <LayoutDashboard 
+            size={isFocused ? 34 : 24} 
+            color={isFocused ? "#8BC652" : "#fff"} 
+            fill={isFocused ? "#8BC652" : "#003324"} 
+            strokeWidth={isFocused ? 1.5 : 1} />
+          : <Eye 
+            size={isFocused ? 34 : 24} 
+            color={isFocused ? "#8BC652" : "#fff"} 
+            strokeWidth={isFocused ? 1.5 : 1} 
+            fill={isFocused ? "#8BC652" : "#003324"} 
+            stroke={isFocused ? "#003324" : "#fff"} />;
         return (
           <TouchableOpacity
             key={route.name}
@@ -40,19 +46,22 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
           </TouchableOpacity>
         );
       })}
-
       {/* Render the central PlusButton */}
-      <TouchableOpacity>
         <PlusButton />
-      </TouchableOpacity>
-
       {/* Render the last two routes */}
       {routes.slice(2).map((route, index) => {
         const isFocused = state.index === index + 2; // Adjust index for the slice
         const icon = route.name === "Messages"
-          ? <MessageCircleMore size={isFocused ? 34 : 24} color={isFocused ? "#003324" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />
-          : <UserRound size={isFocused ? 34 : 24} color={isFocused ? "#003324" : "#fff"} fill={isFocused ? "#8BC652" : "#003324"} strokeWidth={isFocused ? 1.5 : 1} />;
-
+          ? <MessageCircleMore 
+            size={isFocused ? 34 : 24} 
+            color={isFocused ? "#003324" : "#fff"} 
+            fill={isFocused ? "#8BC652" : "#003324"} 
+            strokeWidth={isFocused ? 1.5 : 1} />
+          : <UserRound 
+            size={isFocused ? 34 : 24} 
+            color={isFocused ? "#003324" : "#fff"} 
+            fill={isFocused ? "#8BC652" : "#003324"} 
+            strokeWidth={isFocused ? 1.5 : 1} />;
         return (
           <TouchableOpacity
             key={route.name}
