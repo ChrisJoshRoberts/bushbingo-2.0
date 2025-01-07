@@ -1,15 +1,11 @@
 import { Image, Pressable, StyleSheet } from "react-native"
+import {  CirclePlus } from 'lucide-react-native'
 
 
 const IconButton = () => {
   return (
     <Pressable>
-      <Image 
-        source={{uri: 'https://www.iconpacks.net/icons/2/free-plus-icon-3107-thumb.png'}}
-        width={30}
-        height={30}
-        style={styles.iconContainer}
-      />
+      <CirclePlus size={40} color={'#8BC652'} strokeWidth={1.5}/>
     </Pressable>
   )
 }

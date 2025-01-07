@@ -48,7 +48,7 @@ export default GamesCarousel
 
 const styles = StyleSheet.create({
   noGameContainer : {
-    width: cardWidth + 15,
+    width: 352,
     height: 170,
     marginLeft: 10,
     marginBottom: 10,

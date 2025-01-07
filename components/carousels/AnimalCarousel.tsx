@@ -41,5 +41,6 @@ const styles = StyleSheet.create({
   animalCardContainer: {
     width: width,
     justifyContent: 'center',
+    marginBottom: 10
   }
 })
