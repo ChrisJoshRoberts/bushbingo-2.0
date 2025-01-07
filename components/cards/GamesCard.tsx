@@ -1,5 +1,5 @@
 import { Dimensions, Image, ImageBackground, Pressable, StyleSheet, Text, View } from "react-native"
-import { GamesCardProps } from "../types/types"
+import { GamesCardProps } from "../../types/types"
 import { LinearGradient } from 'expo-linear-gradient';
 
 

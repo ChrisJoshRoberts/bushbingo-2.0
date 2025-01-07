@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     borderColor: '#8BC652',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 8,
+    gap: 4,
     backgroundColor: '#E8D9CB'
   },
   noGameTitle :{

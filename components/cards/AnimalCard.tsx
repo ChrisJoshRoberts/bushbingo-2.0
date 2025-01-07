@@ -43,7 +43,7 @@ export default AnimalCard
 const styles = StyleSheet.create({
   animalCardContainer: {
     flexDirection: 'row',
-    marginVertical: 10,
+    marginVertical: 8,
     width: cardWidth,
     backgroundColor: '#fff',
     borderRadius: 10,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: 5,
     padding: 4,
-    color: '#F5EBE2'
+    color: '#fff'
   },
   animalPoints: {
     fontSize: 16,
