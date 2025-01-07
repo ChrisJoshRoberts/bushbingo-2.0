@@ -1,6 +1,7 @@
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native"
 import { ParkCardProps } from "../../types/types"
 import { ArrowRight } from 'lucide-react-native';
+import colors from "../../constants/Colors";
 
 const pardCardWidth = Dimensions.get('window').width * 0.55
 
@@ -16,11 +17,11 @@ const ParkCard = ({title, image, location}: ParkCardProps) => {
       <View style={styles.parkDetails}>
         <View>
           <Text style={styles.parkTitle}>{title}</Text>
-          <Text style={{color: '#003324', opacity: 0.5}}>{location}</Text>
+          <Text style={{color: colors.primaryGreen, opacity: 0.5}}>{location}</Text>
         </View>
         <View>
           <Pressable>
-            <ArrowRight size={24} color={'#8BC652'} />  
+            <ArrowRight size={24} color={colors.secondaryGreen} />  
           </Pressable>
         </View>
       </View>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   parkTitle: {
     fontSize: 18,
     fontWeight: 700,
-    color: '#003324'
+    color: colors.primaryGreen
   }
 
 })

@@ -1,6 +1,7 @@
 import { Dimensions, FlatList, Pressable, StyleSheet, Text, View } from "react-native"
 import GamesCard from "../cards/GamesCard"
 import IconButton from "../buttons/IconButton";
+import colors from "../../constants/Colors";
 
 const { width } = Dimensions.get('window')
 const cardWidth = width * 0.9;
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderStyle: 'dashed',
-    borderColor: '#8BC652',
+    borderColor: colors.secondaryGreen,
     justifyContent: 'center',
     alignItems: 'center',
     gap: 4,
@@ -64,9 +65,9 @@ const styles = StyleSheet.create({
   noGameTitle :{
     fontSize: 18,
     fontWeight: 700,
-    color: '#003324'
+    color: colors.primaryGreen
   },
   noGameText: {
-    color: '#F76711'
+    color: colors.orange
   }
 })

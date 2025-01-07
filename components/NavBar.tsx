@@ -1,9 +1,10 @@
-import { Animated, Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Animated, StyleSheet, TouchableOpacity, View } from "react-native";
 import NavIcon from "./NavIcon";
 import { LayoutDashboard, Eye, MessageCircleMore, UserRound } from "lucide-react-native";
 import PlusButton from "./buttons/PlusButton";
 import { NavBarProps } from "../types/types";
 import { useEffect, useRef } from "react";
+import colors from '../constants/Colors'
 
 const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
   const routes = state.routes;
@@ -26,15 +27,15 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
         const icon = route.name === "Home"
           ? <LayoutDashboard 
             size={isFocused ? 34 : 24} 
-            color={isFocused ? "#8BC652" : "#fff"} 
-            fill={isFocused ? "#8BC652" : "#003324"} 
+            color={isFocused ? colors.secondaryGreen : "#fff"} 
+            fill={isFocused ? colors.secondaryGreen  : colors.primaryGreen} 
             strokeWidth={isFocused ? 1.5 : 1} />
           : <Eye 
             size={isFocused ? 34 : 24} 
-            color={isFocused ? "#8BC652" : "#fff"} 
+            color={isFocused ? colors.secondaryGreen  : "#fff"} 
             strokeWidth={isFocused ? 1.5 : 1} 
-            fill={isFocused ? "#8BC652" : "#003324"} 
-            stroke={isFocused ? "#003324" : "#fff"} />;
+            fill={isFocused ? colors.secondaryGreen  : colors.primaryGreen} 
+            stroke={isFocused ? colors.primaryGreen : "#fff"} />;
         return (
           <TouchableOpacity
             key={route.name}
@@ -54,13 +55,13 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
         const icon = route.name === "Messages"
           ? <MessageCircleMore 
             size={isFocused ? 34 : 24} 
-            color={isFocused ? "#003324" : "#fff"} 
-            fill={isFocused ? "#8BC652" : "#003324"} 
+            color={isFocused ? colors.primaryGreen : "#fff"} 
+            fill={isFocused ? colors.secondaryGreen : colors.primaryGreen} 
             strokeWidth={isFocused ? 1.5 : 1} />
           : <UserRound 
             size={isFocused ? 34 : 24} 
-            color={isFocused ? "#003324" : "#fff"} 
-            fill={isFocused ? "#8BC652" : "#003324"} 
+            color={isFocused ? colors.primaryGreen : "#fff"} 
+            fill={isFocused ? colors.secondaryGreen : colors.primaryGreen} 
             strokeWidth={isFocused ? 1.5 : 1} />;
         return (
           <TouchableOpacity
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     left: 10,
     bottom: 24,
     height: 70,
-    backgroundColor: "#003324",
+    backgroundColor: colors.primaryGreen,
     alignItems: "center",
     width: "95%",
     flexDirection: "row",

@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Text, View } from "react-native"
+import colors from "../constants/Colors"
 
 const ProfileHeader = () => {
   return (
@@ -11,7 +12,7 @@ const ProfileHeader = () => {
       />
       <View>
         <Text style={styles.profileTitle}>Welcome Chris</Text>
-        <Text style={{color: '#003324'}}><Text style={{fontWeight: 700, color: '#F76711'}}>Rank: </Text>Explorer</Text>
+        <Text style={styles.profileRank}><Text style={styles.profileRankTag}>Rank: </Text>Explorer</Text>
       </View>
     </View>
   )
@@ -34,7 +35,14 @@ const styles = StyleSheet.create({
   profileTitle: {
     fontSize: 24,
     fontWeight: 700,
-    color: '#003324'
+    color: colors.primaryGreen
+  },
+  profileRankTag: {
+    color: colors.orange,   
+    fontWeight: 700
+  },
+  profileRank: {
+    color: colors.primaryGreen,
   }
 
 })

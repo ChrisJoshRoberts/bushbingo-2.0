@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, View } from "react-native"
 import { Plus } from 'lucide-react-native'
+import colors from "../../constants/Colors"
 
 
 const PlusButton = () => {
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     width: 85,
     height: 85,
     borderRadius: 100,
-    backgroundColor: '#8BC652',
+    backgroundColor: colors.secondaryGreen,
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: "#000",

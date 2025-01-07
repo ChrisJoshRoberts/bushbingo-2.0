@@ -1,6 +1,7 @@
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native"
 import CardButton from "../buttons/CardButton"
 import { AnimalCardProps } from "../../types/types"
+import colors from "../../constants/Colors"
 
 const cardWidth = Dimensions.get('window').width * 0.95
 
@@ -73,12 +74,12 @@ const styles = StyleSheet.create({
   animalTitle: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#003324'
+    color: colors.primaryGreen
   },
   animalCategory: {
     fontSize: 10,
     fontWeight: '700',
-    backgroundColor: '#F76711',
+    backgroundColor: colors.orange,
     textAlign: 'center',
     borderRadius: 5,
     padding: 4,
@@ -87,12 +88,12 @@ const styles = StyleSheet.create({
   animalPoints: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#003324'
+    color: colors.primaryGreen
   },
   animalStatus: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#003324'
+    color: colors.primaryGreen
   },
   pointsContainer: {
     backgroundColor: '#0033240D',
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
   innerTitle: {
     fontSize: 12,
     fontWeight: '700',
-    color: '#003324',
+    color: colors.primaryGreen,
     opacity: 0.75
   }
 })

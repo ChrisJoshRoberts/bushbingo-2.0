@@ -1,5 +1,6 @@
 import { Alert, Button, StyleSheet, View } from "react-native"
 import { CardButtonProps } from "../../types/types"
+import colors from '../../constants/Colors'
 
 
 const CardButton = ({title}: CardButtonProps) => {
@@ -27,6 +28,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderTopLeftRadius: 10,
     borderBottomRightRadius: 10,
-    backgroundColor: '#003324',
+    backgroundColor: colors.primaryGreen,
   }
 }) 
