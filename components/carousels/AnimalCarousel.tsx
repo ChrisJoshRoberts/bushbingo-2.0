@@ -31,7 +31,6 @@ const AnimalCarousel = () => {
 
   useEffect(() => {
     const fetchedAnimals = realm.objects('Animal')
-
     const animalsArray = fetchedAnimals.map((animal) => {
       
       return {

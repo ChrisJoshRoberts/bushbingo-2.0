@@ -1,4 +1,4 @@
-import { Animated, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Animated, StyleSheet, TouchableOpacity } from "react-native";
 import NavIcon from "./NavIcon";
 import { LayoutDashboard, Eye, MessageCircleMore, UserRound } from "lucide-react-native";
 import PlusButton from "./buttons/PlusButton";

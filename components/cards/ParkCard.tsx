@@ -2,12 +2,20 @@ import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-nati
 import { ParkCardProps } from "../../types/types"
 import { ArrowRight } from 'lucide-react-native';
 import colors from "../../constants/Colors";
+import { useNavigation } from '@react-navigation/native';
 
 const pardCardWidth = Dimensions.get('window').width * 0.55
 
 const ParkCard = ({title, location}: ParkCardProps) => {
+  const navigation = useNavigation()
   return (
-    <View style={styles.parkCardContainer}>
+    <Pressable style={styles.parkCardContainer}
+      onPress={() => {
+        console.log('ParkCard Pressed')
+        navigation.navigate('Park', { title, location, })
+
+      }}
+    >
       <View style={styles.parkImage}>
         <Image 
           source={{uri: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b'}}
@@ -25,7 +33,7 @@ const ParkCard = ({title, location}: ParkCardProps) => {
           </Pressable>
         </View>
       </View>
-    </View>
+    </Pressable>
   )
 }
 
