@@ -5,7 +5,7 @@ import Realm from 'realm';
 const AnimalSchema = {
   name: 'Animal',
   properties: {
-    id: 'string',
+    id: 'int',
     title: 'string',
     points: 'int',
     imagePath: 'string', // Store the image path as a string
@@ -22,7 +22,7 @@ Realm.deleteFile({ schema: [AnimalSchema] });
 // Prepopulate the animals
 const initialAnimals = [
   {
-    id: '1',
+    id: 1,
     title: 'Lion',
     points: 10,
     imagePath: '../../assets/images/animals/male-lion.png',
@@ -32,7 +32,7 @@ const initialAnimals = [
     lifespan: '20 years',
   },
   {
-    id: '2',
+    id: 2,
     title: 'Elephant',
     points: 8,
     imagePath: '../../assets/images/animals/male-elephant.png',
@@ -42,7 +42,7 @@ const initialAnimals = [
     lifespan: '60 years',
   },
   {
-    id: '3',
+    id: 3,
     title: 'Giraffe',
     points: 12,
     imagePath: '../../assets/images/animals/giraffe.png',
@@ -52,7 +52,7 @@ const initialAnimals = [
     lifespan: '25 years',
   },
   {
-    id: '4',
+    id: 4,
     title: 'Rhino',
     points: 15,
     imagePath: '../../assets/images/animals/rhino.png',

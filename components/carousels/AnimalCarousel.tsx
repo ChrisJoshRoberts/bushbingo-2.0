@@ -5,12 +5,6 @@ import colors from "../../constants/Colors"
 import { useEffect, useState } from "react"
 import realm from "../../schemas/Animal"
 
-const AnimalData = [
-  // {id: '1', title: 'Lion', points: 10, image: require('../../assets/images/animals/male-lion.png'), category: 'Big Cats', status: 'Safe', diet: 'Carnivore', lifespan: '20 years'},
-  // {id: '2', title: 'Elephant', points: 8, image: require('../../assets/images/animals/male-elephant.png'), category: 'Mammals', status: 'Protected', diet: 'Herbivore', lifespan: '60 years'},
-  // {id: '3', title: 'Girrafe', points: 12, image: require('../../assets/images/animals/giraffe.png'), category: 'Mammals', status: 'Secure', diet: 'Herbivore', lifespan: '25 years'},
-  // {id: '4', title: 'Rhino', points: 15, image: require('../../assets/images/animals/rhino.png'), category: 'Big Five', status: 'Protected', diet: 'Herbivore', lifespan: '40 years'},
-]
 
 const imageMap : Record<string, any> = {
   '../../assets/images/animals/male-lion.png': require('../../assets/images/animals/male-lion.png'),
