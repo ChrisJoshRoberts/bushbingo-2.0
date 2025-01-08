@@ -2,6 +2,14 @@ import { Dimensions, FlatList, Text, View } from "react-native"
 import ParkCard from "../cards/ParkCard"
 import TextButton from "../buttons/TextButton"
 import SectionTitle from "../SectionTitle"
+import { useEffect, useState } from "react"
+import realm from "../../schemas/Animal"
+
+type Park = {
+  id: number;
+  name: string;
+  description: string;
+}
 
 const { width } = Dimensions.get('window')
 
@@ -13,16 +21,31 @@ const data = [
 
 
 const ParksCarousel = () => {
+  const [parks, setParks] = useState<Park[]>([])
+
+  useEffect(() => {
+    const fetchedParks = realm.objects('Park')
+
+    const parkArray = fetchedParks.map((park) => {
+      return {
+        id: park.id as number,
+        name: park.name as string,
+        description: park.description as string,
+      }
+    })
+    setParks(parkArray)
+  }, [])
+
   return (
     <View style={{width: width, height: 260,}}>
       <SectionTitle title='All Parks' />
       <FlatList
-        data={data}
-        keyExtractor={(item) => item.id}
+        data={parks}
+        keyExtractor={(item) => item.id.toString()}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({item}) => (
-          <ParkCard title={item.title} image={item.image} location={item.location} />
+          <ParkCard title={item.name} location={item.description} />
         )}
       />
     </View>

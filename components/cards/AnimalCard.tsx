@@ -1,4 +1,4 @@
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native"
+import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native"
 import CardButton from "../buttons/CardButton"
 import { AnimalCardProps } from "../../types/types"
 import colors from "../../constants/Colors"
@@ -7,7 +7,7 @@ const cardWidth = Dimensions.get('window').width * 0.95
 
 const AnimalCard = ({title, points, image, category, status, diet, lifespan}: AnimalCardProps) => {
   return (
-    <View style={styles.animalCardContainer}>
+    <Pressable style={styles.animalCardContainer}>
       <Image 
         source={image}
         style={styles.animalImage}
@@ -31,7 +31,7 @@ const AnimalCard = ({title, points, image, category, status, diet, lifespan}: An
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   )
 }
 

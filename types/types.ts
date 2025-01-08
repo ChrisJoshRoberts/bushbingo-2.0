@@ -19,7 +19,7 @@ export interface GamesCardProps {
 
 export interface ParkCardProps {
   title: string;
-  image: string;
+  image?: string;
   location: string;
 }
 

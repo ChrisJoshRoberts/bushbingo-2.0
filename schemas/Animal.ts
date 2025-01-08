@@ -1,25 +1,60 @@
 import Realm from 'realm';
 
-
-// Define the Animal schema
+// First, define a basic version of Animal schema without the relationship
 const AnimalSchema = {
   name: 'Animal',
   properties: {
     id: 'int',
     title: 'string',
     points: 'int',
-    imagePath: 'string', // Store the image path as a string
+    imagePath: 'string',
     category: 'string',
     status: 'string',
     diet: 'string',
-    lifespan: 'string',
+    lifespan: 'string'
   },
-  primaryKey: 'id', // Use `id` as the primary key
+  primaryKey: 'id'
 };
 
-Realm.deleteFile({ schema: [AnimalSchema] });
+// Define Park schema without the relationship first
+const ParkSchema = {
+  name: 'Park',
+  properties: {
+    id: 'int',
+    name: 'string',
+    location: 'string',
+    description: 'string?'
+  },
+  primaryKey: 'id'
+};
 
-// Prepopulate the animals
+// Define the junction schema
+const ParkAnimalSchema = {
+  name: 'ParkAnimal',
+  properties: {
+    id: 'int',
+    park: 'Park',
+    animal: 'Animal',
+    dateAdded: 'date',
+    isActive: 'bool'
+  },
+  primaryKey: 'id'
+};
+
+// Now update the schemas to include the relationships
+AnimalSchema.properties.parks = {
+  type: 'linkingObjects',
+  objectType: 'ParkAnimal',
+  property: 'animal'
+};
+
+ParkSchema.properties.animals = {
+  type: 'linkingObjects',
+  objectType: 'ParkAnimal',
+  property: 'park'
+};
+
+// Your existing initial animals data
 const initialAnimals = [
   {
     id: 1,
@@ -63,37 +98,92 @@ const initialAnimals = [
   },
 ];
 
-// Initialize Realm with migration logic
+const initialParks = [
+  {
+    id: 1,
+    name: 'Safari Park',
+    location: 'East Region',
+    description: 'A vast savanna-like environment'
+  },
+  {
+    id: 2,
+    name: 'Wildlife Reserve',
+    location: 'West Region',
+    description: 'Protected natural habitat'
+  }
+];
+
+// Delete existing realm file to ensure clean slate
+try {
+  Realm.deleteFile({ schema: [AnimalSchema, ParkSchema, ParkAnimalSchema] });
+} catch (error) {
+  console.log("Error deleting Realm file:", error);
+}
+
+// Initialize Realm with all schemas
 const realm = new Realm({
-  schema: [AnimalSchema],
-  schemaVersion: 1, // Increment the schema version to indicate changes
-  migration: (oldRealm, newRealm) => {
-    if (oldRealm.schemaVersion < 1) {
-      const oldObjects = oldRealm.objects('Animal');
-      const newObjects = newRealm.objects('Animal');
-
-      // Migrate the schema changes
-      for (let i = 0; i < oldObjects.length; i++) {
-        const oldObject = oldObjects[i];
-        const newObject = newObjects[i];
-
-        // Assign a unique ID as a string for primary key
-        newObject.id = oldObject.id ? String(oldObject.id) : `${i + 1}`;
-        newObject.title = oldObject.name || ''; // Handle missing `name`
-        newObject.imagePath = oldObject.imagePath || ''; // Default empty path
-      }
-    }
+  schema: [AnimalSchema, ParkSchema, ParkAnimalSchema],
+  schemaVersion: 3, // Incrementing schema version
+  onMigration: (oldRealm, newRealm) => {
+    // Migration not needed for fresh install
   },
 });
 
+// Helper functions for managing relationships
+export const addAnimalToPark = (animalId, parkId) => {
+  try {
+    realm.write(() => {
+      const animal = realm.objectForPrimaryKey('Animal', animalId);
+      const park = realm.objectForPrimaryKey('Park', parkId);
+      
+      if (!animal || !park) {
+        console.log('Animal or Park not found:', { animalId, parkId });
+        return;
+      }
 
-// Populate data if not already present
-realm.write(() => {
-  const existingAnimals = realm.objects('Animal');
-  if (existingAnimals.length === 0) {
-    initialAnimals.forEach((animal) => realm.create('Animal', animal));
+      // Check if relationship already exists
+      const existingRelation = realm
+        .objects('ParkAnimal')
+        .filtered('animal.id == $0 AND park.id == $1', animalId, parkId)[0];
+      
+      if (!existingRelation) {
+        realm.create('ParkAnimal', {
+          id: Date.now(),
+          park: park,
+          animal: animal,
+          dateAdded: new Date(),
+          isActive: true
+        });
+        console.log('Relationship created successfully');
+      } else {
+        console.log('Relationship already exists');
+      }
+    });
+  } catch (error) {
+    console.error('Error in addAnimalToPark:', error);
   }
-});
+};
 
-// Export the Realm instance
+// Initialize data
+try {
+  realm.write(() => {
+    // Populate parks
+    initialParks.forEach(park => {
+      if (!realm.objectForPrimaryKey('Park', park.id)) {
+        realm.create('Park', park);
+      }
+    });
+
+    // Populate animals
+    initialAnimals.forEach(animal => {
+      if (!realm.objectForPrimaryKey('Animal', animal.id)) {
+        realm.create('Animal', animal);
+      }
+    });
+  });
+} catch (error) {
+  console.error('Error initializing data:', error);
+}
+
 export default realm;
+export { AnimalSchema, ParkSchema, ParkAnimalSchema };

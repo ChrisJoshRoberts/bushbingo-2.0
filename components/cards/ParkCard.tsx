@@ -5,12 +5,12 @@ import colors from "../../constants/Colors";
 
 const pardCardWidth = Dimensions.get('window').width * 0.55
 
-const ParkCard = ({title, image, location}: ParkCardProps) => {
+const ParkCard = ({title, location}: ParkCardProps) => {
   return (
     <View style={styles.parkCardContainer}>
       <View style={styles.parkImage}>
         <Image 
-          source={{uri: image}}
+          source={{uri: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b'}}
           style={{width: '100%', height: '100%', borderRadius: 10}}
         />
       </View>
