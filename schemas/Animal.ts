@@ -61,36 +61,6 @@ const initialAnimals = [
     diet: 'Herbivore',
     lifespan: '40 years',
   },
-  {
-    id: '5',
-    title: 'Zebra',
-    points: 10,
-    imagePath: '../../assets/images/animals/zebra.png',
-    category: 'Big Five',
-    status: 'Protected',
-    diet: 'Herbivore',
-    lifespan: '25 years',
-  },
-  {
-    id: '6',
-    title: 'Cheetah',
-    points: 20,
-    imagePath: '../../assets/images/animals/cheetah.png',
-    category: 'Big Cats',
-    status: 'Endangered',
-    diet: 'Carnivore',
-    lifespan: '12 years',
-  },
-  {
-    id: '7',
-    title: 'Hippo',
-    points: 15,
-    imagePath: '../../assets/images/animals/hippo.png',
-    category: 'Mammals',
-    status: 'Protected',
-    diet: 'Herbivore',
-    lifespan: '40 years',
-  }
 ];
 
 // Initialize Realm with migration logic

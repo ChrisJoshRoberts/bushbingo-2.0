@@ -12,11 +12,11 @@ const AnimalData = [
   // {id: '4', title: 'Rhino', points: 15, image: require('../../assets/images/animals/rhino.png'), category: 'Big Five', status: 'Protected', diet: 'Herbivore', lifespan: '40 years'},
 ]
 
-const imageMap : Record <string, any> = {
-  'male-lion.png' : require('../../assets/images/animals/male-lion.png'),
-  'male-elephant.png' : require('../../assets/images/animals/male-elephant.png'),
-  'giraffe.png' : require('../../assets/images/animals/giraffe.png'),
-  'rhino.png' : require('../../assets/images/animals/rhino.png'),
+const imageMap : Record<string, any> = {
+  '../../assets/images/animals/male-lion.png': require('../../assets/images/animals/male-lion.png'),
+  '../../assets/images/animals/male-elephant.png': require('../../assets/images/animals/male-elephant.png'),
+  '../../assets/images/animals/giraffe.png': require('../../assets/images/animals/giraffe.png'),
+  '../../assets/images/animals/rhino.png': require('../../assets/images/animals/rhino.png'),
 }
 
 const { width } = Dimensions.get('window')
@@ -39,6 +39,7 @@ const AnimalCarousel = () => {
     const fetchedAnimals = realm.objects('Animal')
 
     const animalsArray = fetchedAnimals.map((animal) => {
+      
       return {
         id: animal.id as string,
         title: animal.title as string,
