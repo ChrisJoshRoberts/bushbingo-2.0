@@ -13,7 +13,7 @@ const NavBar = ({state, navigation, scrollY}: NavBarProps) => {
   useEffect(() => {
     // Animate the NavBar based on the scroll position
     Animated.timing(translateY, {
-      toValue: scrollY > 50 ? 100 : 0,
+      toValue: scrollY > 50 ? 120 : 0,
       duration: 70,
       useNativeDriver: true,
     }).start();
