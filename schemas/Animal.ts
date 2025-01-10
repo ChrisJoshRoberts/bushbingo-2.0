@@ -101,15 +101,17 @@ const initialAnimals = [
 const initialParks = [
   {
     id: 1,
-    name: 'Safari Park',
-    location: 'East Region',
-    description: 'A vast savanna-like environment'
+    name: 'Kruger National Park',
+    location: 'Limpopo/Mpumalanga',
+    description: 'A vast savanna-like environment',
+    image: '../../assets/images/parks/Kruger-gate.jpg'
   },
   {
     id: 2,
-    name: 'Wildlife Reserve',
-    location: 'West Region',
-    description: 'Protected natural habitat'
+    name: 'Addo Elephant Park',
+    location: 'Eastern Cape',
+    description: 'Protected natural habitat',
+    image: '../../assets/images/parks/Addo-gate.jpeg'
   }
 ];
 

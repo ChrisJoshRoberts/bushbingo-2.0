@@ -1,4 +1,4 @@
-import { Dimensions, FlatList, Text, View } from "react-native"
+import { Dimensions, FlatList, Text, View, ImageSourcePropType } from "react-native"
 import ParkCard from "../cards/ParkCard"
 import TextButton from "../buttons/TextButton"
 import SectionTitle from "../SectionTitle"
@@ -9,16 +9,16 @@ type Park = {
   id: number;
   name: string;
   description: string;
+  location: string;
+  image: string;
+}
+
+const imageMap : Record<string, any> = {
+  '../../assets/images/parks/Kruger-gate.jpg': require('../../assets/images/parks/Kruger-gate.jpg'),
+  '../../assets/images/parks/Addo-gate.jpeg': require('../../assets/images/parks/Addo-gate.jpeg'),
 }
 
 const { width } = Dimensions.get('window')
-
-const data = [
-  {id: '1', title: 'Kruger National Park', image: 'https://img.getaway.co.za/wp-content/uploads/2021/10/Kruger-gate-Twitter.width-800.jpg', location: 'Limpopo' },
-  {id: '2', title: 'Addo Elephant Park', image: 'https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAJDllNzFmMDlhLTJiMTYtNDhmZS1hZGFjLWRlZDcyMTY4MGQ5MQ?w=625&h=440&fit=crop&auto=enhance,format,compress&q=80', location: 'Eastern Cape' },
-  {id: '3', title: 'Table Mountain National Park', image: 'https://b-cdn.springnest.com/media/img/m8/atae1a11c4d1be.png?aspect_ratio=1200%3A630&width=1200', location: 'Western Cape' },
-]
-
 
 const ParksCarousel = () => {
   const [parks, setParks] = useState<Park[]>([])
@@ -31,6 +31,8 @@ const ParksCarousel = () => {
         id: park.id as number,
         name: park.name as string,
         description: park.description as string,
+        image: imageMap[park.imagePath as string],
+        location: park.location as string
       }
     })
     setParks(parkArray)
@@ -45,7 +47,7 @@ const ParksCarousel = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({item}) => (
-          <ParkCard title={item.name} location={item.description} />
+          <ParkCard title={item.name} location={item.location} image={item.image}/>
         )}
       />
     </View>

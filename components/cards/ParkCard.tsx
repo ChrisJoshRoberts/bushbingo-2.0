@@ -6,19 +6,19 @@ import { useNavigation } from '@react-navigation/native';
 
 const pardCardWidth = Dimensions.get('window').width * 0.55
 
-const ParkCard = ({title, location}: ParkCardProps) => {
+const ParkCard = ({title, location, image}: ParkCardProps) => {
   const navigation = useNavigation()
   return (
     <Pressable style={styles.parkCardContainer}
       onPress={() => {
         console.log('ParkCard Pressed')
-        navigation.navigate('Park', { title, location, })
+        navigation.navigate('Park', { title, location, image })
 
       }}
     >
       <View style={styles.parkImage}>
         <Image 
-          source={{uri: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b'}}
+          source={require(image)}
           style={{width: '100%', height: '100%', borderRadius: 10}}
         />
       </View>
